@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h4>Edit Fees</h4>
+
+<form method="post" action="/fees/update">
+<input type="hidden" name="student_id" value="{{ record.student_id }}">
+
+<p>Total Fee: {{ record.total_fee }}</p>
+
+<label>Paid Fee</label>
+<input type="number" name="paid_fee"
+value="{{ record.paid_fee }}" class="form-control">
+
+<button class="btn btn-success mt-3">Save</button>
+</form>
+
+{% endblock %}

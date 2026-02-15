@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Bheema Engineering College ERP</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <span class="navbar-brand">Bheema Engineering College ERP</span>
+    {% if session.get("role") %}
+    <a href="/logout" class="btn btn-danger btn-sm">Logout</a>
+    {% endif %}
+  </div>
+</nav>
+
+<div class="container-fluid">
+<div class="row">
+
+{% if session.get("role") and request.path != '/' %}
+<div class="col-md-2 bg-primary text-white p-3" style="min-height:100vh;">
+
+<h6>Modules</h6>
+<hr>
+
+{% if session.get("role") == "admin" and not session.get("selected_student") %}
+<a href="/admin" class="text-white d-block mb-2">Select Student</a>
+<a href="/add_student" class="text-white d-block mb-2">Add Student</a>
+<a href="/attendance_summary" class="text-white d-block mb-2">Attendance Summary</a>
+{% else %}
+
+<a href="/profile" class="text-white d-block mb-2">Profile</a>
+<a href="/timetable" class="text-white d-block mb-2">Timetable</a>
+<a href="/attendance" class="text-white d-block mb-2">Attendance</a>
+<a href="/marks" class="text-white d-block mb-2">Marks</a>
+<a href="/fees" class="text-white d-block mb-2">Fees</a>
+<a href="/assignments" class="text-white d-block mb-2">Assignments</a>
+<a href="/notifications" class="text-white d-block mb-2">Notifications</a>
+<a href="/exams" class="text-white d-block mb-2">Exams</a>
+<a href="/library" class="text-white d-block mb-2">Library</a>
+<a href="/placement" class="text-white d-block mb-2">Placement</a>
+<a href="/materials" class="text-white d-block mb-2">Course Materials</a>
+
+{% if session.get("role") == "admin" %}
+<hr>
+<a href="/attendance_summary" class="text-warning d-block mb-2">Attendance Summary</a>
+<a href="/add_student" class="text-success d-block mb-2">Add Student</a>
+<a href="/admin" class="text-info d-block mb-2">Back to Students</a>
+{% endif %}
+
+{% endif %}
+
+</div>
+{% endif %}
+
+<div class="col-md-10 p-4">
+{% block content %}{% endblock %}
+</div>
+
+</div>
+</div>
+
+</body>
+</html>

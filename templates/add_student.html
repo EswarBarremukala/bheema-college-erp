@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h4>Add New Student</h4>
+
+<form method="post" action="/save_student">
+
+<label>Name</label>
+<input type="text" name="student_name" class="form-control" required>
+
+<label>Department</label>
+<input type="text" name="department" class="form-control" required>
+
+<label>Year</label>
+<input type="number" name="year" class="form-control" required>
+
+<label>Email</label>
+<input type="email" name="email" class="form-control" required>
+
+<label>Phone</label>
+<input type="text" name="phone" class="form-control" required>
+
+<button class="btn btn-success mt-3">Add Student</button>
+
+</form>
+
+{% endblock %}

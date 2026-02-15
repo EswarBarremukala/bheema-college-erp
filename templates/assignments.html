@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h4>Assignments</h4>
+
+<table class="table table-bordered table-striped">
+<tr>
+<th>Subject</th>
+<th>Title</th>
+<th>Deadline</th>
+<th>Status</th>
+<th>Marks</th>
+</tr>
+
+{% for row in assignments %}
+<tr>
+<td>{{ row.subject }}</td>
+<td>{{ row.assignment_title }}</td>
+<td>{{ row.deadline }}</td>
+<td>{{ row.submission_status }}</td>
+<td>{{ row.marks_obtained }}</td>
+</tr>
+{% endfor %}
+</table>
+
+{% endblock %}

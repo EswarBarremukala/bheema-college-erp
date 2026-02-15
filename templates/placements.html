@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h4>Placement Details</h4>
+
+<table class="table table-bordered table-striped">
+<tr>
+<th>Company</th>
+<th>Role</th>
+<th>Eligibility</th>
+<th>Selection Status</th>
+<th>Package</th>
+</tr>
+
+{% for row in placement %}
+<tr>
+<td>{{ row.company_name }}</td>
+<td>{{ row.role_offered }}</td>
+<td>{{ row.eligibility_status }}</td>
+<td>{{ row.selection_status }}</td>
+<td>{{ row.package }}</td>
+</tr>
+{% endfor %}
+</table>
+
+{% endblock %}

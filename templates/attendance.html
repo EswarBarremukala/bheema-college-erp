@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h4>Attendance</h4>
+
+<table class="table table-bordered">
+<tr>
+<th>Date</th>
+<th>Period-1</th>
+<th>Period-2</th>
+<th>Period-3</th>
+<th>Period-4</th>
+{% if role == "admin" %}<th>Action</th>{% endif %}
+</tr>
+
+{% for row in attendance %}
+<tr>
+<td>{{ row.date }}</td>
+<td>{{ row.period1 }}</td>
+<td>{{ row.period2 }}</td>
+<td>{{ row.period3 }}</td>
+<td>{{ row.period4 }}</td>
+
+{% if role == "admin" %}
+<td>
+<a href="/attendance/edit/{{ row.student_id }}/{{ row.date }}"
+class="btn btn-warning btn-sm">Update</a>
+</td>
+{% endif %}
+</tr>
+{% endfor %}
+</table>
+
+{% endblock %}

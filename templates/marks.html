@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h4>Marks</h4>
+
+<table class="table table-bordered">
+<tr>
+<th>Subject</th>
+<th>Internal</th>
+<th>External</th>
+<th>Total</th>
+<th>Result</th>
+{% if role == "admin" %}<th>Action</th>{% endif %}
+</tr>
+
+{% for row in marks %}
+<tr>
+<td>{{ row.subject }}</td>
+<td>{{ row["internal (25)"] }}</td>
+<td>{{ row["external (75)"] }}</td>
+<td>{{ row.total }}</td>
+<td>{{ row.result }}</td>
+
+{% if role == "admin" %}
+<td>
+<a href="/marks/edit/{{ row.student_id }}"
+   class="btn btn-warning btn-sm">
+   Update
+</a>
+
+</td>
+{% endif %}
+</tr>
+{% endfor %}
+</table>
+
+{% endblock %}

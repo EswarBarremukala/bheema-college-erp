@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h4>Profile Details</h4>
+
+<table class="table table-striped">
+<tr><th>Name</th><td>{{ student.student_name }}</td></tr>
+<tr><th>Department</th><td>{{ student.department }}</td></tr>
+<tr><th>Year</th><td>{{ student.year }}</td></tr>
+<tr><th>Email</th><td>{{ student.email }}</td></tr>
+<tr><th>Phone</th><td>{{ student.phone }}</td></tr>
+</table>
+
+{% endblock %}

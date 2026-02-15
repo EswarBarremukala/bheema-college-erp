@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h4>Course Materials</h4>
+
+<table class="table table-bordered table-striped">
+<tr>
+<th>Subject</th>
+<th>Unit</th>
+<th>Type</th>
+<th>Download</th>
+<th>Upload Date</th>
+</tr>
+
+{% for row in materials %}
+<tr>
+<td>{{ row.subject }}</td>
+<td>{{ row.unit }}</td>
+<td>{{ row.material_type }}</td>
+<td>
+<a href="{{ row.file_link }}" target="_blank"
+class="btn btn-primary btn-sm">Download</a>
+</td>
+<td>{{ row.upload_date }}</td>
+</tr>
+{% endfor %}
+</table>
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h4>Edit Attendance</h4>
+
+<form method="post" action="/attendance/update">
+<input type="hidden" name="student_id" value="{{ record.student_id }}">
+<input type="hidden" name="date" value="{{ record.date }}">
+
+<label>P1</label>
+<select name="period1" class="form-select">
+<option>P</option><option>A</option>
+</select>
+
+<label>P2</label>
+<select name="period2" class="form-select">
+<option>P</option><option>A</option>
+</select>
+
+<label>P3</label>
+<select name="period3" class="form-select">
+<option>P</option><option>A</option>
+</select>
+
+<label>P4</label>
+<select name="period4" class="form-select">
+<option>P</option><option>A</option>
+</select>
+
+<button class="btn btn-success mt-3">Save</button>
+</form>
+
+{% endblock %}

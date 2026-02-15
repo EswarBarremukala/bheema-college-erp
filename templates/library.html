@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h4>Library Records</h4>
+
+<table class="table table-bordered table-striped">
+<tr>
+<th>Book Title</th>
+<th>Issue Date</th>
+<th>Return Date</th>
+<th>Fine</th>
+<th>Status</th>
+</tr>
+
+{% for row in library %}
+<tr>
+<td>{{ row.book_title }}</td>
+<td>{{ row.issue_date }}</td>
+<td>{{ row.return_date }}</td>
+<td>{{ row.fine_amount }}</td>
+<td>{{ row.status }}</td>
+</tr>
+{% endfor %}
+</table>
+
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h4>Notifications & Events</h4>
+
+{% for row in notifications %}
+<div class="card mb-3 p-3 shadow-sm">
+<h5>{{ row.title }}</h5>
+<p>{{ row.description }}</p>
+<p><strong>Date:</strong> {{ row.event_date }}</p>
+
+{% if row.registration_link and row.registration_link != "-" %}
+<a href="{{ row.registration_link }}" target="_blank"
+class="btn btn-primary btn-sm">Register</a>
+{% endif %}
+</div>
+{% endfor %}
+
+{% endblock %}

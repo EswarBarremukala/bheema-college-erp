@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h4>Exam Schedule</h4>
+
+<table class="table table-bordered table-striped">
+<tr>
+<th>Subject</th>
+<th>Type</th>
+<th>Date</th>
+<th>Time</th>
+<th>Hall</th>
+<th>Invigilator</th>
+</tr>
+
+{% for row in exams %}
+<tr>
+<td>{{ row.subject }}</td>
+<td>{{ row.exam_type }}</td>
+<td>{{ row.exam_date }}</td>
+<td>{{ row.exam_time }}</td>
+<td>{{ row.exam_hall }}</td>
+<td>{{ row.invigilator }}</td>
+</tr>
+{% endfor %}
+</table>
+
+{% endblock %}

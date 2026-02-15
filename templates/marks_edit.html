@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h4>Edit Marks</h4>
+
+<form method="post" action="/marks/update">
+<input type="hidden" name="student_id" value="{{ record.student_id }}">
+<input type="hidden" name="subject" value="{{ record.subject }}">
+
+<label>Internal</label>
+<input type="number" name="internal"
+value="{{ record['internal (25)'] }}" class="form-control">
+
+<label>External</label>
+<input type="number" name="external"
+value="{{ record['external (75)'] }}" class="form-control">
+
+<button class="btn btn-success mt-3">Save</button>
+</form>
+
+{% endblock %}

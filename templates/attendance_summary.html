@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h3 class="mb-4">📊 Attendance Summary (Period Based)</h3>
+
+<div class="alert 
+{% if overall_percentage >= 75 %} alert-success {% else %} alert-danger {% endif %}">
+Overall Attendance Percentage: <strong>{{ overall_percentage }}%</strong>
+</div>
+
+<table class="table table-bordered table-striped text-center">
+<thead class="table-dark">
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Total Classes</th>
+<th>Present</th>
+<th>Absent</th>
+<th>Percentage</th>
+</tr>
+</thead>
+
+<tbody>
+{% for row in summary %}
+<tr>
+<td>{{ row.student_id }}</td>
+<td>{{ row.student_name }}</td>
+<td>{{ row.total_classes }}</td>
+<td>{{ row.present }}</td>
+<td>{{ row.absent }}</td>
+<td>
+<span class="badge 
+{% if row.percentage >= 75 %} bg-success {% else %} bg-danger {% endif %}">
+{{ row.percentage }}%
+</span>
+</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+
+{% endblock %}
