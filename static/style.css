@@ -1,31 +1,49 @@
-body {
-    font-family: Arial;
-    background-color: #f4f6f9;
-}
+/* Mobile Login Styling */
 
-.sidebar {
-    background-color: #1e3c72;
+.mobile-login-body {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
     min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.sidebar-link {
-    display: block;
-    color: white;
-    padding: 10px;
-    text-decoration: none;
-    border-radius: 6px;
-    margin-bottom: 5px;
-    transition: 0.3s;
+.mobile-container {
+    background: white;
+    width: 100%;
+    max-width: 380px;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
 }
 
-.sidebar-link:hover {
-    background-color: #2a5298;
-    color: white;
+.app-logo {
+    font-size: 50px;
+    color: #1e3c72;
 }
 
-.content-area {
-    background-color: white;
-    border-radius: 10px;
-    min-height: 85vh;
-    box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
+.toggle-eye {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #666;
+}
+
+.form-control {
+    border-radius: 12px;
+}
+
+.btn-primary {
+    background: #1e3c72;
+    border: none;
+}
+
+.btn-primary:hover {
+    background: #16315c;
+}
+
+.navbar-brand img {
+    border: 2px solid white;
 }
